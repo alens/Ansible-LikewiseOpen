@@ -18,7 +18,7 @@
 
    - name: Join the machine if it is not already on the domain.
      command: /usr/bin/domainjoin-cli join internetq.corp {{ username }} {{password}}
-     when: domain_status.stdout != "MYDOMAIN"
+     when: domain_status.stdout != "{{mydomain}}"
      notify: 
           - config pbis shell
           - config pbis domain
