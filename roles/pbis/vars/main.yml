@@ -3,3 +3,4 @@
 username: user_with_ad_rights
 password: a_randon_password
 url: "http://packages.domain.local/pbis/"
+mydomain: MYDOMAIN
