@@ -20,7 +20,12 @@ enabled=1
 gpgcheck=0
 ```
 
+## Variables
+* `username:` and `password:` of a domain user with granted add/remove computers to the domain
+* `url:` http adress of your yum repo 
+* `mydomain` netbios name of your domain
  
+
 ## Supported platforms
 Redhat/CentOS 6.x
 
