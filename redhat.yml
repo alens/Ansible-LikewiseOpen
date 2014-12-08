@@ -1,0 +1,6 @@
+---
+
+# file: redhat.yml
+ - hosts: all
+   roles:
+       - pbis

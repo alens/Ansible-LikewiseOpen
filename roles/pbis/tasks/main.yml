@@ -1,0 +1,31 @@
+---
+# tasks file for pbis
+
+   - name: copy pbis.repo file
+     template: src=pbis.repo.j2 dest=/etc/yum.repos.d/pbis.repo
+
+   - name: refresh yum cache
+     command: yum --disablerepo=* --enablerepo=pbis clean all 
+ 
+   - name: install pbis
+     yum: name=pbis* state=latest 
+
+
+   - name: check the Domain status
+     shell: /opt/pbis/bin/lsa get-status |grep Netbios |awk '{print $3}'
+     register: domain_status
+  
+  #- name: What is in the variable
+  #  debug: var=domain_status.stdout
+
+   - name: Join the machine if it is not already on the domain.
+     command: /usr/bin/domainjoin-cli join internetq.corp {{ username }} {{password}}
+     when: domain_status.stdout != "MYDOMAIN"
+
+   - name: assumedefaultdomain
+     command: /opt/pbis/bin/config AssumeDefaultDomain true
+     # when: domain_status.stdout != "MYDOMAIN"
+
+   - name: bash env sh
+     command: /opt/pbis/bin/config  LoginShellTemplate /bin/bash
+     # when: domain_status.stdout != "MYDOMAIN"
