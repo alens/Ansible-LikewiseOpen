@@ -15,7 +15,7 @@ The Easiest  way for distributing the PBIS Open packages is using local `yum` re
 # {{ ansible_managed }}
 [pbis]
 name=pbis
-baseurl=http://packages.domain.local/pbis/
+baseurl={{ url }}
 enabled=1
 gpgcheck=0
 ```
