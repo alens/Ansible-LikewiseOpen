@@ -2,4 +2,4 @@
 
 # file: site.yml
   - include: redhat.yml
-    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+    when: ansible_os_family == "RedHat" and ansible_lsb.major_release|int >= 6
