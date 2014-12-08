@@ -1,2 +1,10 @@
 ---
 # handlers file for pbis
+
+   - name: set AssumeDefaultDomain
+     command: /opt/pbis/bin/config AssumeDefaultDomain true
+
+   - name: set bash
+     command: /opt/pbis/bin/config  LoginShellTemplate /bin/bash
+
+
