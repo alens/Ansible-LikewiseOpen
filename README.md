@@ -3,10 +3,9 @@
 
 Ansible playbook for deploying PowerBroker Identity Services PBIS Open Edition for RedHat/CentOS
 
-
 ## Distributing PBIS package
 
-The best and imho easyest way for distributing the PBIS Open packages is using local `yum` repository.
+The Easiest  way for distributing the PBIS Open packages is using local `yum` repository.
 
 1. Download the package from [BeyondTrust Website](http://download1.beyondtrust.com/Technical-Support/Downloads/PowerBroker-Identity-Services-Open-Edition/?Pass=True)
 2. Exctract the package and move the rpm files `pbis-open-8.2.1-2979.x86_64.rpm pbis-open-gui-8.2.1-2979.x86_64.rpm pbis-open-upgrade-8.2.1-2979.x86_64.rpm` to  for example `/var/www/packages/pbis` folder (nginx or apache)
