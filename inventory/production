@@ -6,3 +6,6 @@ webserver-2
 dbserver-1
 dbserver-2
 
+[packages]
+distroserver
+
