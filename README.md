@@ -13,10 +13,10 @@ The Easiest way for distributing the PBIS Open packages is using local `yum` rep
 
 
 ## Variables
-* `username:` and `password:` of a domain user with granted add/remove computers to the domain
-* `url:` http adress of your yum repo
-* `mydomain:` netbios name of your domain
-
+* `domain_user:` and `domain_pass:` of a domain user with granted add/remove computers to the domain
+* `domain_fqdn:` Full qualified domain name of your domain, e.g. office.contoso.com
+* `domain_netbios:` NetBIOS domain name, e.g. CONTOSO
+* `url:` http adress of your yum repo if using Redhat
 
 ## Supported platforms
 * Redhat/CentOS 6.x
