@@ -3,6 +3,9 @@
 
 Ansible playbook for deploying PowerBroker Identity Services PBIS Open Edition for RedHat/CentOS
 
+## Ubuntu PBIS package
+The Ubuntu support adds and installs from the http://repo.pbis.beyondtrust.com/apt.html repo
+
 ## Distributing PBIS package
 
 The Easiest way for distributing the PBIS Open packages is using local `yum` repository.
