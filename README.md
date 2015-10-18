@@ -19,11 +19,9 @@ The Easiest way for distributing the PBIS Open packages is using local `yum` rep
 
 
 ## Supported platforms
-Redhat/CentOS 6.x
-
-Ubuntu 14.04
+* Redhat/CentOS 6.x
+* Ubuntu 14.04
 
 
 ## todo
 * add a module or sh script to download pbis and update rpm repository
-* extend the script for ubuntu/debian
