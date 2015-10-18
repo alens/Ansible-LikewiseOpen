@@ -18,3 +18,4 @@
      notify:
           - config pbis shell
           - config pbis domain
+          - config pbis homedirtemplate
