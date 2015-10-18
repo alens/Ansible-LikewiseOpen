@@ -1,6 +1,8 @@
 ---
 # vars file for pbis
-username: user_with_ad_rights
-password: a_randon_password
-url: "http://packages.domain.local/pbis/"
-mydomain: MYDOMAIN
+domain_fqdn: office.contoso.com
+domain_netbios: CONTOSO
+domain_user: USERNAME
+domain_pass: PASSWORD
+
+redhat_repo_url: "http://packages.domain.local/pbis/"

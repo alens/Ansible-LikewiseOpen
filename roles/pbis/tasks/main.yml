@@ -1,24 +1,19 @@
 ---
 # tasks file for pbis
+   - include: redhat.yml
+     when: ansible_os_family == 'RedHat'
 
-   - name: copy pbis.repo file
-     template: src=pbis.repo.j2 dest=/etc/yum.repos.d/pbis.repo
-
-   - name: refresh yum cache
-     command: yum --disablerepo=* --enablerepo=pbis clean all 
- 
-   - name: install pbis
-     yum: name=pbis* state=latest 
-
+   - include: ubuntu.yml
+     when: ansible_lsb.id == 'Ubuntu'
 
    - name: check the Domain status
      shell: /opt/pbis/bin/lsa get-status |grep Netbios |awk '{print $3}'
      register: domain_status
-  
 
    - name: Join the machine if it is not already on the domain.
-     command: /usr/bin/domainjoin-cli join internetq.corp {{ username }} {{password}}
-     when: domain_status.stdout != "{{mydomain}}"
-     notify: 
+     command: /usr/bin/domainjoin-cli join {{ domain_fqdn }} {{ domain_user }} {{ domain_pass }}
+     when: domain_status.stdout != "{{ domain_netbios }}"
+     notify:
           - config pbis shell
           - config pbis domain
+          - config pbis homedirtemplate

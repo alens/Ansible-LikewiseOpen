@@ -1,0 +1,10 @@
+---
+# tasks file for pbis on Redhat
+   - name: Redhat | copy pbis.repo file
+     template: src=pbis.repo.j2 dest=/etc/yum.repos.d/pbis.repo
+
+   - name: Redhat | refresh yum cache
+     command: yum --disablerepo=* --enablerepo=pbis clean all
+
+   - name: Redhat | install pbis
+     yum: name=pbis* state=latest
