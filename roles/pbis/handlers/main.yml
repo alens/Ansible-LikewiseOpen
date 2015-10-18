@@ -6,3 +6,6 @@
 
    - name: config pbis shell
      command: /opt/pbis/bin/config LoginShellTemplate /bin/bash
+
+   - name: config pbis homedirtemplate
+     command: /opt/pbis/bin/config HomeDirTemplate %H/%U
