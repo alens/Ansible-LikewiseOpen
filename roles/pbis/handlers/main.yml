@@ -9,3 +9,6 @@
 
    - name: config pbis homedirtemplate
      command: /opt/pbis/bin/config HomeDirTemplate %H/%U
+
+   - name: config pbis UserDomainPrefix
+     command: /opt/pbis/bin/config UserDomainPrefix {{ domain_fqdn }}
