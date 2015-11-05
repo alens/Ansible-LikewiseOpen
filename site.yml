@@ -3,3 +3,6 @@
 # file: site.yml
   - include: redhat.yml
     when: ansible_os_family == "RedHat" and ansible_lsb.major_release|int >= 6
+
+  - include: ubuntu.yml
+    when: ansible_lsb.id == "Ubuntu" and ansible_lsb.major_release|int >= 14

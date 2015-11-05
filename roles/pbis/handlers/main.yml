@@ -1,10 +1,14 @@
 ---
 # handlers file for pbis
 
-   - name: config pbis domain 
-     command: /opt/pbis/bin/onfig AssumeDefaultDomain true
+   - name: config pbis domain
+     command: /opt/pbis/bin/config AssumeDefaultDomain true
 
    - name: config pbis shell
-     command: /opt/pbis/bin/config  LoginShellTemplate /bin/bash
+     command: /opt/pbis/bin/config LoginShellTemplate /bin/bash
 
+   - name: config pbis homedirtemplate
+     command: /opt/pbis/bin/config HomeDirTemplate %H/%U
 
+   - name: config pbis UserDomainPrefix
+     command: /opt/pbis/bin/config UserDomainPrefix {{ domain_fqdn }}

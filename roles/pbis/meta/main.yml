@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  author: Alen Stimec 
+  author: Alen Stimec
   description: Ansible playbook for deploying PowerBroker Identity Services PBIS Open Edition for RedHat/CentOS
   company: future.inc
   license: MIT
@@ -10,6 +10,9 @@ galaxy_info:
   - name: EL
     versions:
      - 6
+  - name: Ubuntu
+    versions:
+     - 'trusty'
 
   categories:
   - system
