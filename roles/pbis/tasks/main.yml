@@ -1,19 +1,23 @@
 ---
 # tasks file for pbis
-   - include: redhat.yml
-     when: ansible_os_family == 'RedHat'
+  - include: redhat.yml
+    when: ansible_os_family == 'RedHat'
 
-   - include: ubuntu.yml
-     when: ansible_lsb.id == 'Ubuntu'
+  - include: ubuntu.yml
+    when: ansible_os_family == 'Debian'
 
-   - name: check the Domain status
-     shell: /opt/pbis/bin/lsa get-status |grep Netbios |awk '{print $3}'
-     register: domain_status
+  - name: Check the Domain status
+    shell: /opt/pbis/bin/lsa get-status |grep Netbios |awk '{print $3}'
+    register: domain_status
 
-   - name: Join the machine if it is not already on the domain.
-     command: /usr/bin/domainjoin-cli join {{ domain_fqdn }} {{ domain_user }} {{ domain_pass }}
-     when: domain_status.stdout != "{{ domain_netbios }}"
-     notify:
-          - config pbis shell
-          - config pbis domain
-          - config pbis homedirtemplate
+  - name: Join the machine if it is not already on the domain.
+    command: /usr/bin/domainjoin-cli join {{ domain_fqdn }} {{ domain_user }} {{ domain_pass }}
+    when: domain_status.stdout != "{{ domain_netbios }}"
+    notify:
+      - config pbis shell
+      - config pbis domain
+      - config pbis homedirtemplate
+      - config pbis userdomainprefix
+  
+  - name: config pbis requiremembershipof
+    command: /opt/pbis/bin/config RequireMembershipOf {{ require_membership_of }}
