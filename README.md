@@ -4,8 +4,8 @@
 Ansible playbook for deploying PowerBroker Identity Services PBIS Open Edition for RedHat/CentOS
 
 ## Open PBIS Repo
-* `Ubuntu Repo: `[http://repo.pbis.beyondtrust.com/yum.html](http://repo.pbis.beyondtrust.com/yum.html)
-* `Redhat Repo: `[http://repo.pbis.beyondtrust.com/apt.html](http://repo.pbis.beyondtrust.com/apt.html)
+* `Ubuntu Repo:` [http://repo.pbis.beyondtrust.com/yum.html](http://repo.pbis.beyondtrust.com/yum.html)
+* `Redhat Repo:` [http://repo.pbis.beyondtrust.com/apt.html](http://repo.pbis.beyondtrust.com/apt.html)
 
 ## Variables
 * `domain_user:` and `domain_pass:` of a domain user with granted add/remove computers to the domain
