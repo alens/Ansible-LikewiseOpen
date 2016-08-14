@@ -1,10 +1,15 @@
 ---
 # tasks file for pbis on Redhat
-   - name: Redhat | copy pbis.repo file
-     template: src=pbis.repo.j2 dest=/etc/yum.repos.d/pbis.repo
+# repo info available: http://repo.pbis.beyondtrust.com/yum.html
 
-   - name: Redhat | refresh yum cache
-     command: yum --disablerepo=* --enablerepo=pbis clean all
+  - name: Redhat | add BeyondTrust PBIS open yum repo
+    yum_repository:
+      name: pbiso
+      description: PBIS-Open Repository
+      baseurl: http://repo.pbis.beyondtrust.com/yum/pbiso/$basearch
+      gpgkey: http://repo.pbis.beyondtrust.com/yum/RPM-GPG-KEY-pbis
+      gpgcheck: yes
+      enabled: yes
 
-   - name: Redhat | install pbis
-     yum: name=pbis* state=latest
+  - name: Redhat | yum install pbis-open
+    yum: name=pbis-open state=latest
