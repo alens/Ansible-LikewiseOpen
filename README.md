@@ -1,4 +1,4 @@
-# Ansible-LikewiseOpen
+# Ansible-PBISOpen
 ====================
 
 Ansible playbook for deploying PowerBroker Identity Services (PBIS) Open Edition for RedHat/CentOS & Ubuntu
