@@ -1,8 +1,14 @@
 ---
 # vars file for pbis
+
+# Domain settings / Account
 domain_fqdn: office.contoso.com
 domain_netbios: CONTOSO
 domain_user: USERNAME
 domain_pass: PASSWORD
 
-redhat_repo_url: "http://packages.domain.local/pbis/"
+# Config settings
+homedir_template: "%H/%U"
+login_shell_template: "/bin/bash"
+assume_default_domain: "True"
+require_membership_of: '"CONTOSO\\admins" "CONTOSO\\another-group"'
